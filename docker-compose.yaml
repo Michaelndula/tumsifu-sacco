@@ -5,7 +5,7 @@
 version: "3.6"
 services:
   database:
-    image: mariadb
+    image: mysql
     ports:
       - "3309:3306"
     env_file:
@@ -13,7 +13,7 @@ services:
     networks:
       - default
     volumes:
-      - ./db.sql:/docker-entrypoint-initdb.d/db.sql 
+      - ./db.sql:/docker-entrypoint-initdb.d/db.sql
       - ~/tumsifu-sacco-mysql-data:/var/lib/mysql
     restart: always
 
